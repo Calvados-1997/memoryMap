@@ -16,9 +16,9 @@ export function useMap() {
   })
 
   // マップビューをデフォルトに戻す
-  const resetMapView = () => {
+  const resetView = () => {
     map.value?.setView([35.681236, 139.767125], 16)
   }
 
-  return { map, resetMapView }
+  return { map, resetView }
 }
