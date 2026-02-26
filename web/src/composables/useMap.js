@@ -5,11 +5,12 @@ const defaultLatLng = [35.681236, 139.767125]
 
 export function useMap() {
   const map = shallowRef(null)
+  const mapId = 'map'
 
   onMounted(() => {
     // CDNから読み込んだグローバルの L を使用してマップを初期化
     // 初期値は東京駅
-    map.value = L.map('map').setView(defaultLatLng, defaultZoomLevel)
+    map.value = L.map(mapId).setView(defaultLatLng, defaultZoomLevel)
 
     // コピーライトを表示
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -23,5 +24,5 @@ export function useMap() {
     map.value?.setView(defaultLatLng, defaultZoomLevel)
   }
 
-  return { map, resetView }
+  return { mapId, map, resetView }
 }
