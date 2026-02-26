@@ -1,12 +1,15 @@
 import { onMounted, shallowRef } from 'vue'
 
+const defaultZoomLevel = 16
+const defaultLatLng = [35.681236, 139.767125]
+
 export function useMap() {
   const map = shallowRef(null)
 
   onMounted(() => {
     // CDNから読み込んだグローバルの L を使用してマップを初期化
     // 初期値は東京駅
-    map.value = L.map('map').setView([35.681236, 139.767125], 16)
+    map.value = L.map('map').setView(defaultLatLng, defaultZoomLevel)
 
     // コピーライトを表示
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -17,7 +20,7 @@ export function useMap() {
 
   // マップビューをデフォルトに戻す
   const resetView = () => {
-    map.value?.setView([35.681236, 139.767125], 16)
+    map.value?.setView(defaultLatLng, defaultZoomLevel)
   }
 
   return { map, resetView }
