@@ -1,10 +1,8 @@
-<script setup>
-import MainPage from './pages/MainPage.vue'
-</script>
+<script setup lang="js"></script>
 
 <template>
   <div class="h-full w-full">
-    <MainPage />
+    <RouterView />
   </div>
 </template>
 
