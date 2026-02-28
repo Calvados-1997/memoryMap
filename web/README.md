@@ -1,44 +1,36 @@
-# web
+# MemoryMap(WIP)
 
-This template should help get you started developing with Vue 3 in Vite.
+A map-based web application built with Vue 3 that allows users to search for places in Japan and navigate to them on an interactive map.
 
-## Recommended IDE Setup
+Vue 3 で構築した地図ベースのWebアプリケーションです。場所を検索し、地図上で表示・移動できます。
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Tech Stack / 技術スタック
 
-## Recommended Browser Setup
+- **Vue 3** + **Vite** — フレームワーク & ビルドツール
+- **Vuetify 4** — UIコンポーネント
+- **Tailwind CSS 4** — ユーティリティCSS
+- **Pinia** — 状態管理
+- **Leaflet** (CDN) — 地図表示（OpenStreetMap）
+- **Nominatim API** — ジオコーディング（場所検索）
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Features / 機能
 
-## Customize configuration
+- Interactive map display / インタラクティブな地図表示
+- Place search with geocoding (Japan) / 場所検索（日本国内）
+- Map navigation to search results / 検索結果への地図移動
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Project Structure / プロジェクト構成
 
-## Project Setup
-
-```sh
-npm install
+```
+src/
+├── components/ui/   # 再利用可能なUIコンポーネント
+├── composables/     # Composables（useMap等）
+├── pages/           # ページコンポーネント
+├── router/          # Vue Router設定
+└── stores/          # Pinia ストア（状態管理・API通信）
 ```
 
-### Compile and Hot-Reload for Development
+## APIs / 使用API
 
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
+- **[OpenStreetMap](https://www.openstreetmap.org/)** — Map tiles / 地図タイル
+- **[Nominatim](https://nominatim.org/)** — Geocoding / ジオコーディング（[Usage Policy](https://operations.osmfoundation.org/policies/nominatim/)）
