@@ -10,8 +10,9 @@ const props = defineProps([
   'loading',
   'prependInnerIcon',
   'density',
+  'disabled',
 ])
-const emit = defineEmits(['enter'])
+const emit = defineEmits(['enterKeyDown'])
 const model = defineModel('input')
 </script>
 <template>
@@ -27,7 +28,8 @@ const model = defineModel('input')
     :loading="props.loading"
     :prepend-inner-icon="props.prependInnerIcon"
     :density="props.density"
-    @keyup.enter="emit('enter')"
+    :disabled="props.disabled"
+    @keyup.enter="emit('enterKeyDown')"
   />
 </template>
 <style scoped>
