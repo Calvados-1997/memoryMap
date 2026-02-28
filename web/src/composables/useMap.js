@@ -24,5 +24,9 @@ export function useMap() {
     map.value?.setView(defaultLatLng, defaultZoomLevel)
   }
 
-  return { mapId, map, resetView }
+  const setView = (latLng, zoomLevel) => {
+    map.value?.setView(latLng, zoomLevel)
+  }
+
+  return { mapId, map, resetView, setView }
 }
